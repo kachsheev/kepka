@@ -708,13 +708,6 @@ endif()
 
 target_link_libraries(Telegram Threads::Threads)
 
-set_target_properties(Telegram
-    PROPERTIES
-        COTIRE_CXX_PREFIX_HEADER_INIT SourceFiles/stdafx.h
-        COTIRE_ADD_UNITY_BUILD FALSE
-)
-cotire(Telegram)
-
 # See https://github.com/sakra/cotire/blob/master/MANUAL.md#objective-c
 # ObjC and ObjC++ files cannot be cotired, so they have to include appropriate Qt and Tg
 # headers themselves, this applies to macOS platform sources.
